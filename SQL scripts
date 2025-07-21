@@ -1,0 +1,57 @@
+-Create Cleaned Table Structure
+
+CREATE TABLE HospitalER_Cleaned (
+    PatientId VARCHAR(20),
+    PatientAdmissionDate DATETIME,
+    PatientFirstInitial CHAR(1),
+    PatientLastName VARCHAR(100),
+    PatientGender CHAR(1),
+    PatientAge INT,
+    PatientRace VARCHAR(100),
+    DepartmentReferral VARCHAR(100),
+    PatientAdmissionFlag BIT,
+    PatientSatisfactionScore FLOAT,
+    PatientWaitTime INT,
+    PatientsCM INT
+);
+
+-Insert Cleaned Data
+
+INSERT INTO HospitalER_Cleaned
+SELECT
+    LTRIM(RTRIM([Patient Id])) AS PatientId,
+
+    TRY_CONVERT(DATETIME, [Patient Admission Date], 105) AS PatientAdmissionDate,
+
+    UPPER(LTRIM(RTRIM([Patient First Inital]))) AS PatientFirstInitial,
+    UPPER(LTRIM(RTRIM([Patient Last Name]))) AS PatientLastName,
+    UPPER(LTRIM(RTRIM([Patient Gender]))) AS PatientGender,
+
+    CAST([Patient Age] AS INT) AS PatientAge,
+
+    CASE 
+        WHEN [Patient Race] IS NULL OR [Patient Race] = 'None' THEN NULL
+        ELSE CONCAT(
+            UPPER(LEFT(LTRIM(RTRIM([Patient Race])), 1)),
+            LOWER(SUBSTRING(LTRIM(RTRIM([Patient Race])), 2, LEN([Patient Race])))
+        )
+    END AS PatientRace,
+
+    CASE 
+        WHEN [Department Referral] IS NULL OR [Department Referral] = 'None' THEN NULL
+        ELSE CONCAT(
+            UPPER(LEFT(LTRIM(RTRIM([Department Referral])), 1)),
+            LOWER(SUBSTRING(LTRIM(RTRIM([Department Referral])), 2, LEN([Department Referral])))
+        )
+    END AS DepartmentReferral,
+
+    CAST([Patient Admission Flag] AS BIT) AS PatientAdmissionFlag,
+
+    TRY_CAST([Patient Satisfaction Score] AS FLOAT) AS PatientSatisfactionScore,
+
+    CAST([Patient Waittime] AS INT) AS PatientWaitTime,
+    CAST([Patients CM] AS INT) AS PatientsCM
+FROM HospitalER_Raw;
+
+
+
