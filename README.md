@@ -25,10 +25,16 @@ To build a real-time Azure-based data pipeline that ingests, transforms, and ana
 <img width="547" height="331" alt="image" src="https://github.com/user-attachments/assets/78c7b23f-8e41-4b08-9643-4926659b9772" />
 
 # 📊 Power BI Dashboard
-🧑‍⚕️ Patient Distribution by Department 
+
+
+🧑‍⚕️ Patient Distribution by Department
+
 ⏳ Patient Wait Time Analysis 
+
 👥 Demographic Insights
+
 📅 Appointment Trends 
+
 📈 Satisfaction Correlation 
 
 
