@@ -22,7 +22,13 @@ To build a real-time Azure-based data pipeline that ingests, transforms, and ana
 
 # 📊 Dashboard Preview
 
-<img width="547" height="331" alt="image" src="https://github.com/user-attachments/assets/78c7b23f-8e41-4b08-9643-4926659b9772" />
+<img width="1170" height="710" alt="Screenshot 2025-07-28 210644" src="https://github.com/user-attachments/assets/ff4eb8b0-f29d-418b-994a-2b795dc3b438" />
+
+<img width="1170" height="710" alt="image" src="https://github.com/user-attachments/assets/79d35cba-9650-4331-af0b-5554e2e51dda" />
+
+<img width="1170" height="710" alt="image" src="https://github.com/user-attachments/assets/5036d0fd-a103-43f6-a091-13078f4ceacd" />
+
+
 
 # 📊 Power BI Dashboard
 
@@ -52,11 +58,11 @@ To build a real-time Azure-based data pipeline that ingests, transforms, and ana
 
 ### This  solution empowers the hospital to:
 
-Enhance patient service delivery through real-time data insights
+- Enhance patient service delivery through real-time data insights
 
-Reduce reporting lag by eliminating manual processes
+- Reduce reporting lag by eliminating manual processes
 
-Track and optimize treatment effectiveness and patient wait times
+- Track and optimize treatment effectiveness and patient wait times
 
 
 
